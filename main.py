@@ -11,23 +11,23 @@ if __name__ == "__main__":
     regions = ["C-J6MT", "UALX-3", "jita", "amarr", "dodixie"]
     regions_short = ["C-J6MT", "jita"]
 
-    # input_fuel_items_csv = "local_prices/fuel_items.csv"
-    # input_minerals_items_csv = "local_prices/minerals_items.csv"
-    # input_doctrine_items_csv = "local_prices/doctrine_items.csv"
-    # output_doctrine_dir = "local_prices/doctrine"
-    # output_fuel_dir = "local_prices/fuel"
-    # output_minerals_dir = "local_prices/minerals"
+    input_fuel_items_csv = "local_prices/fuel_items.csv"
+    input_minerals_items_csv = "local_prices/minerals_items.csv"
+    input_doctrine_items_csv = "local_prices/doctrine_items.csv"
+    output_doctrine_dir = "local_prices/doctrine"
+    output_fuel_dir = "local_prices/fuel"
+    output_minerals_dir = "local_prices/minerals"
 
-    # get_all_prices(input_fuel_items_csv, output_fuel_dir, regions)
-    # get_all_prices(input_minerals_items_csv, output_minerals_dir, regions_short)
-    # get_all_prices(input_doctrine_items_csv, output_doctrine_dir, regions_short)
+    get_all_prices(input_fuel_items_csv, output_fuel_dir, regions)
+    get_all_prices(input_minerals_items_csv, output_minerals_dir, regions_short)
+    get_all_prices(input_doctrine_items_csv, output_doctrine_dir, regions_short)
 
-    # input_fuel_dir = "local_prices/fuel"
-    # input_minerals_dir = "local_prices/minerals"
+    input_fuel_dir = "local_prices/fuel"
+    input_minerals_dir = "local_prices/minerals"
 
-    # analyze_market_timeline(input_fuel_dir, regions)
-    # analyze_market_timeline(input_minerals_dir, regions_short)
+    analyze_market_timeline(input_fuel_dir, regions)
+    analyze_market_timeline(input_minerals_dir, regions_short)
 
-    # trading_analysis("local_prices/fuel_items.csv", "local_prices/fuel", "jita", "C-J6MT")
-    # trading_analysis("local_prices/minerals_items.csv", "local_prices/minerals", "jita", "C-J6MT")
+    trading_analysis("local_prices/fuel_items.csv", "local_prices/fuel", "jita", "C-J6MT")
+    trading_analysis("local_prices/minerals_items.csv", "local_prices/minerals", "jita", "C-J6MT")
     trading_analysis("local_prices/doctrine_items.csv", "local_prices/doctrine", "jita", "C-J6MT")
