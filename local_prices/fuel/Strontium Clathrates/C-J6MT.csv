@@ -1,0 +1,4 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+3886.0,3913.0,4061.51,3886.0,2313.39,3361.0,2617.0,2677.53,3361.0,380.44,Strontium Clathrates,16275,C-J6MT,2025-10-29 13:53:52
+3886.0,3913.0,4061.51,3886.0,2313.39,3361.0,2617.0,2677.53,3361.0,380.44,Strontium Clathrates,16275,C-J6MT,2025-10-29 13:57:04
+3886.0,3913.0,4061.51,3886.0,2313.39,3361.0,2617.0,2677.53,3361.0,380.44,Strontium Clathrates,16275,C-J6MT,2025-10-29 14:08:16

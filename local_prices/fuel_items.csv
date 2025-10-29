@@ -1,0 +1,17 @@
+name,type_id,volume_m3
+Oxygen,3683,0.19
+Coolant,9832,0.75
+Enriched Uranium,44,0.75
+Mechanical Parts,3689,0.75
+Robotics,9848,3.0
+Liquid Ozone,16273,0.4
+Heavy Water,16272,0.4
+Strontium Clathrates,16275,3.0
+Helium Isotopes,16274,0.03
+Hydrogen Isotopes,17889,0.03
+Nitrogen Isotopes,17888,0.03
+Oxygen Isotopes,17887,0.03
+Helium Fuel Block,4247,5.0
+Hydrogen Fuel Block,4246,5.0
+Nitrogen Fuel Block,4051,5.0
+Oxygen Fuel Block,4312,5.0

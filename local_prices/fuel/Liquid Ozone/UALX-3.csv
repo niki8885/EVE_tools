@@ -1,0 +1,4 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+121.1,145.0,133.54,121.1,12.28,66.0,33.04,43.83,61.09,14.11,Liquid Ozone,16273,UALX-3,2025-10-29 13:53:42
+121.1,145.0,133.54,121.1,12.28,66.0,33.04,43.83,61.09,14.11,Liquid Ozone,16273,UALX-3,2025-10-29 13:56:54
+121.1,145.0,133.54,121.1,12.28,66.0,33.04,43.83,61.09,14.11,Liquid Ozone,16273,UALX-3,2025-10-29 14:08:05

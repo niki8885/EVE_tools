@@ -1,0 +1,4 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+89430.0,92410.0,93260.97,89440.0,3733.56,86340.0,15.15,275.27,86010.0,23041.73,Robotics,9848,jita,2025-10-29 13:53:37
+89430.0,92410.0,93260.97,89440.0,3733.56,86340.0,15.15,275.27,86010.0,23041.73,Robotics,9848,jita,2025-10-29 13:56:49
+89430.0,92410.0,93260.97,89440.0,3733.56,86340.0,15.15,275.27,86010.0,23041.73,Robotics,9848,jita,2025-10-29 14:08:00

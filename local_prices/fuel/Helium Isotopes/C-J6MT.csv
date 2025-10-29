@@ -1,0 +1,4 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+1106.0,1300.0,1266.45,1106.0,97.07,1052.0,955.0,974.32,1052.0,41.81,Helium Isotopes,16274,C-J6MT,2025-10-29 13:53:57
+1106.0,1300.0,1266.45,1106.0,97.07,1052.0,955.0,974.32,1052.0,41.81,Helium Isotopes,16274,C-J6MT,2025-10-29 13:57:09
+1106.0,1300.0,1266.45,1106.0,97.07,1052.0,955.0,974.32,1052.0,41.81,Helium Isotopes,16274,C-J6MT,2025-10-29 14:08:21
