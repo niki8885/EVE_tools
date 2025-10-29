@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 1000000.0,1355000.0,1540110.36,1092000.0,517712.81,960300.0,1165.0,11415.57,960100.0,404560.13,Micro Auxiliary Power Core II,4254,C-J6MT,2025-10-29 18:37:29
+1000000.0,1355000.0,1540110.36,1092000.0,517712.81,960300.0,1165.0,11415.57,960100.0,404560.13,Micro Auxiliary Power Core II,4254,C-J6MT,2025-10-29 18:33:21
