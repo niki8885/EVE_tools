@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -33,15 +35,16 @@ jobs:
           path: |
             local_prices/fuel
             analysis/fuel
+
       - name: Commit and push updated prices
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          
+
           git add local_prices/fuel analysis/fuel
-      
+
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update EVE prices and analysis [skip ci]"
             git remote set-url origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}.git
