@@ -50,7 +50,7 @@ jobs:
           git config --global user.email "github-actions@github.com"
 
           git add local_prices/fuel local_prices/minerals local_prices/doctrine
-          git add analysis/fuel analysis/minerals analysis/doctrine
+          git add analysis/fuel analysis/minerals
           git add trade/fuel trade/minerals trade/doctrine
 
           if [ -n "$(git status --porcelain)" ]; then
