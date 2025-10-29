@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+194900000.0,218800000.0,236707525.41,194900000.0,42192258.97,105800000.0,198200.0,564192.19,105800000.0,40969479.41,Rokh,24688,C-J6MT,2025-10-29 18:39:27

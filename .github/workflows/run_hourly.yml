@@ -2,7 +2,7 @@ name: Run EVE Price Scraper Hourly
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # every hour
   workflow_dispatch:
 
 jobs:
@@ -31,10 +31,17 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: eve_prices
+          name: eve_prices_and_analysis
           path: |
             local_prices/fuel
+            local_prices/minerals
+            local_prices/doctrine
             analysis/fuel
+            analysis/minerals
+            analysis/doctrine
+            trade/fuel
+            trade/minerals
+            trade/doctrine
 
       - name: Commit and push updated prices
         env:
@@ -43,10 +50,12 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-          git add local_prices/fuel analysis/fuel
+          git add local_prices/fuel local_prices/minerals local_prices/doctrine
+          git add analysis/fuel analysis/minerals analysis/doctrine
+          git add trade/fuel trade/minerals trade/doctrine
 
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Update EVE prices and analysis [skip ci]"
+            git commit -m "Update EVE prices, analysis, and trade reports [skip ci]"
             git remote set-url origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}.git
             git push origin master
           else

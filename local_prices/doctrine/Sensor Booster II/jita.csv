@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+940000.0,984400.0,1114398.7,941300.0,779381.38,871000.0,306000.0,45556.75,871000.0,412852.92,Sensor Booster II,1952,jita,2025-10-29 18:39:43
