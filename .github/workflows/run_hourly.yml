@@ -33,3 +33,11 @@ jobs:
           path: |
             local_prices/fuel
             analysis/fuel
+      - name: Commit and push updated prices
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add local_prices/fuel
+          git add analysis/fuel
+          git commit -m "Update EVE prices and analysis [skip ci]" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }} HEAD:main
