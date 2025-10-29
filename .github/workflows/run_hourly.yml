@@ -38,7 +38,6 @@ jobs:
             local_prices/doctrine
             analysis/fuel
             analysis/minerals
-            analysis/doctrine
             trade/fuel
             trade/minerals
             trade/doctrine
