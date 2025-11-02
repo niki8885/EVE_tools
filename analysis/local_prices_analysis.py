@@ -6,7 +6,7 @@ import numpy as np
 import scipy.stats as stats
 
 region_colors = {
-    "C-J6MT": "#8172b3",
+    "C-J6MT": "#d62728",
     "UALX-3": "#dd8452",
     "jita":   "#4c72b0",
     "amarr":  "#ff7f0e",
