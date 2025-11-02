@@ -121,7 +121,7 @@ def trading_analysis(items_path: str, prices_path: str, region1: str = None, reg
         report_name = (
             f"trade_report_{i}_{region1}_vs_{region2}_"
             f"{scenario_labels[i].replace(' ', '').replace('→', 'to')}_"
-            f"{datetime.now().strftime('%Y%m%d_%H%M')}.csv"
+            f".csv"
         )
         report_path = os.path.join(reports_dir, report_name)
         df.to_csv(report_path, index=False)
@@ -153,4 +153,4 @@ def trading_analysis(items_path: str, prices_path: str, region1: str = None, reg
         plt.savefig(scatter_path)
         plt.close()
 
-    print(f"✅ All trade reports and plots saved in '{base_trade_dir}'.")
+    print(f"All trade reports and plots saved in '{base_trade_dir}'.")
