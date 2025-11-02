@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+351600.0,400000.0,389951.2,351700.0,27981.57,133900.0,132600.0,117692.22,133900.0,26377.61,Nanofiber Internal Structure II,2605,C-J6MT,2025-11-02 09:07:55

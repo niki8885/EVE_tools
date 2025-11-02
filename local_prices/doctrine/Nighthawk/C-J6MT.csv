@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+350000000.0,370000000.0,409566831.45,350000000.0,70174093.95,240300000.0,240100000.0,235700939.68,240300000.0,7759817.13,Nighthawk,22470,C-J6MT,2025-11-02 09:07:56

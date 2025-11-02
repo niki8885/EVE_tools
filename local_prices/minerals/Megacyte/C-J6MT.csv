@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+3333.0,3499.0,3611.69,3333.0,252.59,2653.0,1.0,13.96,2652.0,1220.86,Megacyte,40,C-J6MT,2025-11-02 09:05:49

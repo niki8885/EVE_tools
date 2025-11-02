@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+6999.0,6999.0,6999.15,6999.0,0.36,1004.0,1004.0,1003.71,1004.0,0.46,Counterbalanced Compact Gyrostabilizer,5933,C-J6MT,2025-11-02 09:06:36

@@ -1,0 +1,2 @@
+Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
+545800.0,603000.0,590547.63,545900.0,92859.2,167700.0,50240.0,61101.63,167700.0,42217.82,Assault Damage Control II,47257,C-J6MT,2025-11-02 09:06:10
