@@ -5,6 +5,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
 
+region_colors = {
+    "C-J6MT": "#8172b3",
+    "UALX-3": "#dd8452",
+    "jita":   "#4c72b0",
+    "amarr":  "#ff7f0e",
+    "dodixie": "#55a868"
+}
+
 def analyze_market_timeline(input_dir: str, regions: list, save_base_dir: str = "analysis"):
     input_name = os.path.basename(input_dir.rstrip("/\\"))
     save_dir = os.path.join(save_base_dir, input_name)
@@ -51,7 +59,8 @@ def analyze_market_timeline(input_dir: str, regions: list, save_base_dir: str = 
         axs = axs.flatten()
         for i, item in enumerate(items):
             df_item = df_all[df_all["Item"] == item]
-            for region, color in [(r, np.random.rand(3,)) for r in regions]:
+            for region in regions:
+                color = region_colors.get(region, "gray")
                 data = df_item[df_item["Region"] == region][value_col].dropna()
                 if len(data) == 0:
                     continue
@@ -75,7 +84,8 @@ def analyze_market_timeline(input_dir: str, regions: list, save_base_dir: str = 
     axs = axs.flatten()
     for i, item in enumerate(items):
         df_item = df_all[df_all["Item"] == item]
-        for region, color in [(r, np.random.rand(3,)) for r in regions]:
+        for region in regions:
+            color = region_colors.get(region, "gray")
             data = df_item[df_item["Region"] == region]["Sell_Min"].dropna()
             if len(data) == 0:
                 continue
