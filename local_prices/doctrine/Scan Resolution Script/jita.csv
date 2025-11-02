@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 18990.0,19000.0,19495.24,18990.0,878895.16,13700.0,13270.0,11053.24,13700.0,3084.64,Scan Resolution Script,29011,jita,2025-11-02 09:08:28
 18980.0,19000.0,19495.4,18990.0,879032.53,13700.0,13270.0,11053.24,13700.0,3084.64,Scan Resolution Script,29011,jita,2025-11-02 09:19:56
+18990.0,19000.0,19495.8,18990.0,879381.03,13700.0,13270.0,11053.24,13700.0,3084.64,Scan Resolution Script,29011,jita,2025-11-02 10:19:39

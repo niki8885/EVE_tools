@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 1238.0,1263.0,1358.17,1238.0,43912.42,607.1,581.3,384.67,607.1,111.08,Interdiction Maneuvers Charge,42839,jita,2025-11-02 09:07:10
 1238.0,1263.0,1358.23,1238.0,43922.52,607.2,581.3,384.68,607.1,111.09,Interdiction Maneuvers Charge,42839,jita,2025-11-02 09:18:11
+1236.0,1263.0,1357.9,1238.0,43880.7,607.2,581.3,384.66,607.1,111.09,Interdiction Maneuvers Charge,42839,jita,2025-11-02 10:18:20

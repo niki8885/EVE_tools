@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 20450.0,20530.0,20818.84,20500.0,815.19,16160.0,15850.0,14989.23,16160.0,2184.76,Targeting Range Script,29009,jita,2025-11-02 09:08:54
 20480.0,20530.0,20818.94,20500.0,815.28,16160.0,15850.0,14989.11,16160.0,2184.85,Targeting Range Script,29009,jita,2025-11-02 09:20:32
+20490.0,20530.0,20818.99,20500.0,815.33,16160.0,15850.0,14988.75,16160.0,2185.14,Targeting Range Script,29009,jita,2025-11-02 10:20:05

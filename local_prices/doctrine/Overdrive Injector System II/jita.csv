@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 635000.0,644900.0,670887.99,635100.0,189735.29,596200.0,0.01,0.01,0.01,1549.19,Overdrive Injector System II,1236,jita,2025-11-02 09:08:03
 634900.0,644900.0,670903.59,635100.0,189802.26,596200.0,0.01,0.01,0.01,1549.19,Overdrive Injector System II,1236,jita,2025-11-02 09:19:22
+634000.0,644900.0,670872.72,634000.0,189956.01,596200.0,0.01,0.01,0.01,1546.89,Overdrive Injector System II,1236,jita,2025-11-02 10:19:14

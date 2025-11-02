@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 998900.0,1244000.0,1220019.65,998900.0,247347.87,944500.0,50.0,593.28,944400.0,386292.87,Drone Link Augmentor II,24427,jita,2025-11-02 09:06:44
 944600.0,1244000.0,1219997.2,998900.0,247367.18,944400.0,50.0,588.79,944400.0,385782.72,Drone Link Augmentor II,24427,jita,2025-11-02 09:17:35
+998700.0,1244000.0,1210405.89,998700.0,246882.65,944400.0,50.0,587.51,944400.0,385636.42,Drone Link Augmentor II,24427,jita,2025-11-02 10:17:54

@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 25000.0,26690.0,28133.43,25000.0,364426.91,23850.0,0.01,0.01,0.01,365.79,Nanite Repair Paste,28668,jita,2025-11-02 09:07:54
 25000.0,26700.0,28158.26,25000.0,365781.82,23850.0,0.01,0.01,0.01,365.79,Nanite Repair Paste,28668,jita,2025-11-02 09:19:09
+25000.0,26700.0,28191.51,25000.0,367589.96,23850.0,0.01,0.01,0.01,365.79,Nanite Repair Paste,28668,jita,2025-11-02 10:19:04

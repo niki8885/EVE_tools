@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 4.32,4.7,4.82,4.32,99.07,4.07,2.8,1.9,4.07,1.34,Tritanium,34,jita,2025-11-02 09:05:44
 4.31,4.7,4.82,4.32,99.65,4.09,2.8,1.89,4.07,1.34,Tritanium,34,jita,2025-11-02 09:16:15
+4.29,4.7,4.8,4.29,97.23,4.1,2.8,1.88,4.07,1.34,Tritanium,34,jita,2025-11-02 10:16:54

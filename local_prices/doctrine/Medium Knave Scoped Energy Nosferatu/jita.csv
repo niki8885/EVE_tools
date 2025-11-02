@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 189900.0,206900.0,213113.23,189900.0,12532.26,155200.0,150200.0,152043.75,155200.0,2358.93,Medium Knave Scoped Energy Nosferatu,16507,jita,2025-11-02 09:07:36
 155300.0,206900.0,212750.95,189900.0,13205.81,155200.0,150200.0,152040.88,155200.0,2358.1,Medium Knave Scoped Energy Nosferatu,16507,jita,2025-11-02 09:18:45
+155300.0,206900.0,212492.74,189800.0,13352.73,155200.0,150200.0,151994.18,155200.0,2343.94,Medium Knave Scoped Energy Nosferatu,16507,jita,2025-11-02 10:18:46

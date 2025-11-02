@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 14870.0,14970.0,14950.89,14870.0,42.68,12430.0,10930.0,10661.5,12430.0,1296.66,Mechanical Parts,3689,C-J6MT,2025-11-02 09:05:32
 14870.0,14970.0,14950.89,14870.0,42.68,12430.0,10930.0,10661.5,12430.0,1296.66,Mechanical Parts,3689,C-J6MT,2025-11-02 09:15:57
+10000.0,11570.0,12278.85,10100.0,3608994.77,18000.0,1.15,6.11,12410.0,4670.94,Mechanical Parts,3689,C-J6MT,2025-11-02 10:16:40

@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 922100.0,1052000.0,1230337.51,922200.0,430157.0,615400.0,611500.0,612148.62,615400.0,1401.92,Medium Command Processor I,43896,jita,2025-11-02 09:07:30
 922000.0,1052000.0,1230333.26,922100.0,430159.7,615400.0,611500.0,612148.62,615400.0,1401.92,Medium Command Processor I,43896,jita,2025-11-02 09:18:37
+921900.0,1052000.0,1228121.27,922000.0,429778.63,615400.0,611500.0,612148.62,615400.0,1401.92,Medium Command Processor I,43896,jita,2025-11-02 10:18:40

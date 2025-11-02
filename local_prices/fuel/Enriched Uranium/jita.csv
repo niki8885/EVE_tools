@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 14350.0,14900.0,16064.37,14350.0,12131.6,14120.0,1.15,18.25,14120.0,6202.45,Enriched Uranium,44,jita,2025-11-02 09:05:31
 14350.0,14900.0,16073.44,14370.0,12160.46,14120.0,1.15,18.25,14120.0,6202.45,Enriched Uranium,44,jita,2025-11-02 09:15:56
+14370.0,14900.0,15890.55,14370.0,11493.43,14120.0,1.15,18.25,14120.0,6202.45,Enriched Uranium,44,jita,2025-11-02 10:16:39

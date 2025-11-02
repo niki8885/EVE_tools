@@ -1,3 +1,4 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 14.99,73.95,51.35,14.99,26.18,14.01,14.0,14.0,14.01,0.0,Tremor S,12633,C-J6MT,2025-11-02 09:09:00
 14.99,73.95,51.35,14.99,26.18,14.02,14.02,14.02,14.02,0.0,Tremor S,12633,C-J6MT,2025-11-02 09:20:38
+14.99,73.95,51.35,14.99,26.18,14.02,14.02,14.02,14.02,0.0,Tremor S,12633,C-J6MT,2025-11-02 10:20:10
