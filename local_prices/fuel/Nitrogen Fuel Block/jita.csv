@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 20870.0,21700.0,22055.82,20890.0,975.64,20210.0,0.01,0.01,0.15,1201.04,Nitrogen Fuel Block,4051,jita,2025-11-02 09:05:42
+21080.0,21850.0,22113.69,21080.0,965.87,20210.0,0.01,0.01,0.15,1201.04,Nitrogen Fuel Block,4051,jita,2025-11-02 09:16:12

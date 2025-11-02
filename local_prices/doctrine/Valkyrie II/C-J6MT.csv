@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 767800.0,938600.0,1027527.31,799100.0,271812.58,357800.0,357800.0,357673.44,357800.0,211.12,Valkyrie II,21640,C-J6MT,2025-11-02 09:09:01
+799100.0,938600.0,1028017.39,799100.0,271803.84,500000.0,357800.0,382457.65,500000.0,57045.12,Valkyrie II,21640,C-J6MT,2025-11-02 09:20:41

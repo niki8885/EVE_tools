@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 21330.0,22820.0,22908.46,21330.0,1263.19,19560.0,0.01,0.01,0.15,791.18,Oxygen Fuel Block,4312,jita,2025-11-02 09:05:43
+21330.0,22820.0,22908.9,21330.0,1263.08,19560.0,0.01,0.01,0.15,791.18,Oxygen Fuel Block,4312,jita,2025-11-02 09:16:13

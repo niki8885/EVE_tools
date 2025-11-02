@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 770500.0,799900.0,814137.87,770500.0,33713.07,50870.0,50870.0,50844.58,50870.0,31.57,Small Capacitor Booster II,3568,C-J6MT,2025-11-02 09:08:38
+770500.0,799900.0,814168.8,770500.0,33704.6,50870.0,50870.0,50844.58,50870.0,31.57,Small Capacitor Booster II,3568,C-J6MT,2025-11-02 09:20:10

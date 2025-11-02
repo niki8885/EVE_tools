@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 110400000.0,112600000.0,119120442.17,110400000.0,21293688.27,94750000.0,0.01,0.01,0.01,317951.36,Jackdaw,34828,jita,2025-11-02 09:07:11
+109900000.0,112000000.0,118790484.56,109900000.0,21077955.61,94790000.0,0.01,0.01,0.01,317976.97,Jackdaw,34828,jita,2025-11-02 09:18:12

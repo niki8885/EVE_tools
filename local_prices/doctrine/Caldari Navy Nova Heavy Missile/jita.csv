@@ -1,2 +1,3 @@
 Sell_Min,Sell_Median,Sell_Average,Sell_1st Percentile,Sell_Standard Deviation,Buy_Max,Buy_Median,Buy_Average,Buy_99th Percentile,Buy_Standard Deviation,Item,TypeID,Region,Timestamp
 1000.0,1035.0,1051.84,1000.0,122.21,958.1,953.9,53.3,958.1,422.57,Caldari Navy Nova Heavy Missile,27453,jita,2025-11-02 09:06:26
+1000.0,1035.0,1051.87,1000.0,122.23,958.1,953.9,53.3,958.1,422.57,Caldari Navy Nova Heavy Missile,27453,jita,2025-11-02 09:17:10
