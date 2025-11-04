@@ -41,6 +41,8 @@ jobs:
             trade/fuel
             trade/minerals
             trade/doctrine
+            commodities_indices/prices
+            commodities_indices/plots
 
       - name: Commit and push updated prices
         env:
@@ -52,12 +54,12 @@ jobs:
           git add local_prices/fuel local_prices/minerals local_prices/doctrine
           git add analysis/fuel analysis/minerals
           git add trade/fuel trade/minerals trade/doctrine
+          git add commodities_indices/prices commodities_indices/plots
 
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Update EVE prices, analysis, and trade reports [skip ci]"
+            git commit -m "Update EVE market data, indices, and plots (v0.1.3) [skip ci]"
             git remote set-url origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}.git
             git push origin master
           else
             echo "No changes to commit"
           fi
-

@@ -2,6 +2,7 @@ from info.items_requests import fetch_eve_item_data
 from local_prices.goon_prices import get_all_prices
 from analysis.local_prices_analysis import analyze_market_timeline
 from trade.hub_trading import trading_analysis
+from commodities_indices.indices import recive_indicies
 
 if __name__ == "__main__":
     # input_path = "doctrine.csv"
@@ -31,3 +32,5 @@ if __name__ == "__main__":
     trading_analysis("local_prices/fuel_items.csv", "local_prices/fuel", "jita", "C-J6MT")
     trading_analysis("local_prices/minerals_items.csv", "local_prices/minerals", "jita", "C-J6MT")
     trading_analysis("local_prices/doctrine_items.csv", "local_prices/doctrine", "jita", "C-J6MT")
+
+    recive_indicies()
