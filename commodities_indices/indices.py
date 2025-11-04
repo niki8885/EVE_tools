@@ -298,7 +298,3 @@ def recive_indicies():
         index_name="war",
         index_path="prices/war/index.csv"
     )
-
-
-if __name__ == "__main__":
-    recive_indicies()
