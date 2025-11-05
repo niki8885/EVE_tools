@@ -273,28 +273,28 @@ def plot_index_grids(index_name: str, index_path: str):
 
 
 def recive_indicies():
-    update_commodity_index("data/minerals.csv")
-    update_commodity_index("data/moon.csv")
-    update_commodity_index("data/PI.csv")
-    update_commodity_index("data/ice.csv")
-    update_commodity_index("data/war.csv")
+    update_commodity_index("commodities_indices/data/minerals.csv")
+    update_commodity_index("commodities_indices/data/moon.csv")
+    update_commodity_index("commodities_indices/data/PI.csv")
+    update_commodity_index("commodities_indices/data/ice.csv")
+    update_commodity_index("commodities_indices/data/war.csv")
     plot_index_grids(
         index_name="minerals",
-        index_path="prices/minerals/index.csv"
+        index_path="commodities_indices/prices/minerals/index.csv"
     )
     plot_index_grids(
         index_name="moon",
-        index_path="prices/moon/index.csv"
+        index_path="commodities_indices/prices/moon/index.csv"
     )
     plot_index_grids(
         index_name="PI",
-        index_path="prices/PI/index.csv"
+        index_path="commodities_indices/prices/PI/index.csv"
     )
     plot_index_grids(
         index_name="ice",
-        index_path="prices/ice/index.csv"
+        index_path="commodities_indices/prices/ice/index.csv"
     )
     plot_index_grids(
         index_name="war",
-        index_path="prices/war/index.csv"
+        index_path="commodities_indices/prices/war/index.csv"
     )
