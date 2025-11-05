@@ -1,5 +1,4 @@
 import requests
-import pandas as pd
 import time
 import os
 import json
@@ -177,6 +176,7 @@ def update_commodity_index(csv_path, region_id=REGION_ID):
 
 def plot_index_grids(index_name: str, index_path: str):
     os.makedirs(f"plots/{index_name}", exist_ok=True)
+    out_dir = f"commodities_indices/plots/{index_name}"
     df = pd.read_csv(index_path)
 
     df["timestamp"] = pd.to_datetime(df["timestamp"])
@@ -220,7 +220,7 @@ def plot_index_grids(index_name: str, index_path: str):
     ax6.grid(True)
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    fig.savefig(f"plots/{index_name}/grid_index_{index_name}.png", dpi=200)
+    fig.savefig(f"{out_dir}/grid_index_{index_name}.png", dpi=200)
     plt.close(fig)
 
     # ========== GRID 2 ==========
@@ -271,7 +271,7 @@ def plot_index_grids(index_name: str, index_path: str):
     ax4.grid(True)
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    fig2.savefig(f"plots/{index_name}/grid_risk_{index_name}.png", dpi=200)
+    fig2.savefig(f"{out_dir}/grid_risk_{index_name}.png", dpi=200)
     plt.close(fig2)
 
     print(f"Saved grids to plots/{index_name}/")
