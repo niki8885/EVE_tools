@@ -179,8 +179,60 @@ It collects real-time data directly from the [EVE Tycoon API](https://evetycoon.
 timestamp,buyVolume,sellVolume,buyOrders,sellOrders,buyAvgFivePercent,sellAvgFivePercent,OI,VR,LI,VPO,RSI,MACD,MSI,SMA_buyAvgFivePercent_24,...
 2025-11-05 10:00:00,215581,831898,203,451,2477927.73,2598726.21,-0.58,0.26,0.0007,1520.9,47.2,-130.3,-0.42,2521000.54,...
 ```
+---
+
+## **Market Volume Analyzer**
+
+The `volume` module introduces **global market activity analytics** for EVE Online by aggregating traded volumes across all tracked items and regions.
+Its goal is to identify **periods of heightened market activity**, **systemic liquidity changes**, and **market-wide volatility trends** rather than focusing on individual items.
+
+### **Data Flow**
+
+1. Reads individual item-level volume data from:
+
+   ```
+   volume/data/items/<item_name>.csv
+   ```
+2. Aggregates and sums all trading volumes across items into a unified dataset:
+
+   ```
+   volume/data/aggregated_volume.csv
+   ```
+3. Computes global market indicators:
+
+   * Total traded volume per hour/day
+   * Average buy/sell volume
+   * Buy/Sell order counts and ratios
+   * Global liquidity and activity indices
+4. Appends time-stamped data points automatically to maintain a **continuous global volume timeline**.
 
 ---
+
+### **Computed Indicators**
+
+| Category                | Indicator                           | Description                                                     |
+| ----------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| **Volume Aggregates**   | **Total Volume (TV)**               | Sum of all traded volumes across all tracked items              |
+|                         | **Buy/Sell Volume Ratio (BVR)**     | Ratio of total buy to sell volume                               |
+|                         | **Volume Change (ΔV)**              | Hourly or daily change in total traded volume                   |
+| **Liquidity Metrics**   | **Order Density (OD)**              | `(buyOrders + sellOrders) / TotalVolume`                        |
+|                         | **Order Imbalance (OI)**            | `(buyVolume - sellVolume) / (buyVolume + sellVolume)`           |
+| **Volatility & Trends** | **Rolling Volume Volatility (RVV)** | Rolling std of total volume over time                           |
+|                         | **Volume SMA / EMA (10, 24, 48)**   | Moving averages of total traded volume                          |
+| **Activity Indices**    | **Market Activity Index (MAI)**     | Normalized metric of volume dynamics and volatility combined    |
+|                         | **Peak Activity Marker (PAM)**      | Flags time periods with extreme (>95th percentile) total volume |
+
+---
+
+### **Example Data Output**
+
+```
+timestamp,total_volume,buy_volume,sell_volume,buy_orders,sell_orders,BVR,OI,RVV,SMA_total_volume_24,MAI
+2025-11-05T12:00:00,4521903,1625172,2896731,812,1392,0.56,-0.28,32184.9,4492100.5,0.73
+2025-11-05T13:00:00,4678201,1712839,2965362,834,1420,0.58,-0.27,31829.7,4502802.7,0.78
+```
+---
+
 
 ## Project Structure
 ```
@@ -227,6 +279,11 @@ timestamp,buyVolume,sellVolume,buyOrders,sellOrders,buyAvgFivePercent,sellAvgFiv
 │   ├── data/                    
 │   ├── models/                  
 │   └── plots/    
+├── volume/         
+│   ├── volume_data.py     
+│   ├── volume_analysis.py       
+│   ├── data/                                     
+│   └── plots/  
 ├── local_prices/goon_prices.py # Scripts for fetching and updating item prices
 ├── analysis/local_prices_analysis.py # Scripts for analyzing historical market data
 ├── requirements.txt # Python dependencies

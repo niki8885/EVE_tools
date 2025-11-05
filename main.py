@@ -4,6 +4,7 @@ from analysis.local_prices_analysis import analyze_market_timeline
 from trade.hub_trading import trading_analysis
 from commodities_indices.indices import recive_indicies
 from plex.plex_price import request_plex_info
+from volume.volume_data import request_volume_data
 
 if __name__ == "__main__":
     # input_path = "doctrine.csv"
@@ -37,3 +38,5 @@ if __name__ == "__main__":
     recive_indicies()
 
     request_plex_info()
+
+    request_volume_data()
