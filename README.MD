@@ -25,7 +25,7 @@ It supports automatic scraping, accumulation of historical data, and generating 
 - Save combined CSV reports for further analysis.
 - Automatically generates `trade/*` folders with scenario-based profit analysis and visualizations.
 
-## **Extended Module: Commodities Indices**
+## **Commodities Indices**
 
 The `commodities_indices` module introduces **automated index computation** and **analytics** for EVE Online commodity groups (e.g., fuel, minerals, ice, etc.).
 It integrates directly with the [EVE Tycoon API](https://evetycoon.com/api) and produces historical records with computed metrics and visualizations.
@@ -116,6 +116,70 @@ Saved as:
 plots/<category>/<category>_index_grid.png
 plots/<category>/<category>_distribution_grid.png
 ```
+
+---
+
+## **PLEX Market Monitor**
+
+The `plex` module introduces **automated market tracking** and **indicator computation** for the PLEX item (`type_id = 44992`).
+It collects real-time data directly from the [EVE Tycoon API](https://evetycoon.com/api/v1/market/stats/19000001/44992), stores it as a time series, and computes a broad set of **technical and liquidity indicators**.
+
+### **Data Flow**
+
+1. Fetches latest PLEX market statistics from:
+
+   ```
+   https://evetycoon.com/api/v1/market/stats/{regionId}/{typeId}
+   ```
+
+   (default region: `19000001`)
+2. Appends the fetched data to:
+
+   ```
+   plex/data/price.csv
+   ```
+3. Computes derived indicators and metrics:
+
+   * Order and volume-based indicators
+   * Momentum and volatility metrics
+   * Moving averages and oscillators
+4. Exports enriched historical data for long-term monitoring and visualization.
+
+---
+
+### **Computed Market Indicators**
+
+| Category               | Indicator                         | Description                                            |
+| ---------------------- | --------------------------------- | ------------------------------------------------------ |
+| **Order Flow**         | **Order Imbalance (OI)**          | Ratio of buy vs sell volume imbalance                  |
+|                        | **Volume Ratio (VR)**             | `buyVolume / sellVolume`                               |
+|                        | **Liquidity Index (LI)**          | `(buyOrders + sellOrders) / (buyVolume + sellVolume)`  |
+|                        | **Volume per Order (VPO)**        | Average traded volume per active order                 |
+| **Volume Dynamics**    | **ΔVolume**                       | Change in total traded volume                          |
+|                        | **Rate of Change (ROC)**          | Percentage change of PLEX price                        |
+|                        | **Cumulative OI (COI)**           | Cumulative order imbalance over time                   |
+|                        | **Rolling Volatility**            | Standard deviation of OI over a moving window          |
+| **Market Sentiment**   | **Market Sentiment Index (MSI)**  | Normalized OI between −1 and +1                        |
+| **Trend Indicators**   | **SMA (10, 24, 48, 120)**         | Simple Moving Averages of PLEX price                   |
+|                        | **EMA (10, 24, 48, 120)**         | Exponential Moving Averages                            |
+|                        | **MACD / Signal**                 | Moving Average Convergence Divergence                  |
+|                        | **RSI (14)**                      | Relative Strength Index for momentum                   |
+| **Volatility Metrics** | **Rolling Std**                   | Rolling standard deviation of price                    |
+|                        | **Bollinger Bands**               | Price envelopes based on volatility (±2σ)              |
+|                        | **Coefficient of Variation (CV)** | Ratio of std to mean (volatility normalization)        |
+| **Volume Analytics**   | **VMA (10, 24, 48, 120)**         | Volume Moving Averages                                 |
+|                        | **VO**                            | Volume Oscillator (EMA short vs long)                  |
+| **Oscillators**        | **Stochastic (%K, %D)**           | Relative position of current price within recent range |
+
+---
+
+### **Data Output Example**
+
+```
+timestamp,buyVolume,sellVolume,buyOrders,sellOrders,buyAvgFivePercent,sellAvgFivePercent,OI,VR,LI,VPO,RSI,MACD,MSI,SMA_buyAvgFivePercent_24,...
+2025-11-05 10:00:00,215581,831898,203,451,2477927.73,2598726.21,-0.58,0.26,0.0007,1520.9,47.2,-130.3,-0.42,2521000.54,...
+```
+
 ---
 
 ## Project Structure
@@ -157,6 +221,12 @@ plots/<category>/<category>_distribution_grid.png
 │   ├── data/                    # Source item lists
 │   ├── prices/                  # Historical index CSVs
 │   └── plots/                   # Generated analysis visuals
+├── plex/         
+│   ├── plex_prices.py     
+│   ├── plex_analysis.py       
+│   ├── data/                    
+│   ├── models/                  
+│   └── plots/    
 ├── local_prices/goon_prices.py # Scripts for fetching and updating item prices
 ├── analysis/local_prices_analysis.py # Scripts for analyzing historical market data
 ├── requirements.txt # Python dependencies

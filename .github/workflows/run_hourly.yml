@@ -43,6 +43,7 @@ jobs:
             trade/doctrine
             commodities_indices/prices
             commodities_indices/plots
+            plex/data 
 
       - name: Commit and push updated prices
         env:
@@ -55,6 +56,7 @@ jobs:
           git add analysis/fuel analysis/minerals
           git add trade/fuel trade/minerals trade/doctrine
           git add commodities_indices/prices commodities_indices/plots
+          git add plex/data 
 
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update EVE market data, indices, and plots (v0.1.3) [skip ci]"

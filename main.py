@@ -3,6 +3,7 @@ from local_prices.goon_prices import get_all_prices
 from analysis.local_prices_analysis import analyze_market_timeline
 from trade.hub_trading import trading_analysis
 from commodities_indices.indices import recive_indicies
+from plex.plex_price import request_plex_info
 
 if __name__ == "__main__":
     # input_path = "doctrine.csv"
@@ -34,3 +35,5 @@ if __name__ == "__main__":
     trading_analysis("local_prices/doctrine_items.csv", "local_prices/doctrine", "jita", "C-J6MT")
 
     recive_indicies()
+
+    request_plex_info()
