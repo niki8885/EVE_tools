@@ -98,7 +98,10 @@ def compute_top3_share(weights):
 
 def update_commodity_index(csv_path, region_id=REGION_ID):
     index_name = os.path.splitext(os.path.basename(csv_path))[0]
-    out_dir = f"prices/{index_name}"
+    base_dir = os.path.dirname(csv_path)
+    root_dir = os.path.abspath(os.path.join(base_dir, ".."))
+
+    out_dir = os.path.join(root_dir, "prices", index_name)
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, "index.csv")
 
@@ -128,8 +131,10 @@ def update_commodity_index(csv_path, region_id=REGION_ID):
     top3_share = compute_top3_share(weights)
     h_index = compute_h_index(weights)
     entropy = compute_entropy(weights)
-
-    liquidity_index = np.nanmean(df["market_volume"]) / np.nanstd(df["market_volume"]) if df["market_volume"].std() != 0 else np.nan
+    liquidity_index = (
+        np.nanmean(df["market_volume"]) / np.nanstd(df["market_volume"])
+        if df["market_volume"].std() != 0 else np.nan
+    )
 
     result = pd.DataFrame([{
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -146,7 +151,7 @@ def update_commodity_index(csv_path, region_id=REGION_ID):
             hist = pd.read_csv(out_path)
             hist = pd.concat([hist, result], ignore_index=True)
         except pd.errors.EmptyDataError:
-            print(f"{out_path} empty.")
+            print(f"{out_path} empty. Creating new history.")
             hist = result
     else:
         hist = result
