@@ -93,7 +93,9 @@ def calculate_volume_indicators(df: pd.DataFrame):
 
 
 def aggregate_volume_stats(path=DATA_DIR / "volume.csv", out=DATA_DIR / "avg_volume.csv"):
-    df = pd.read_csv(path, parse_dates=["timestamp"])
+    df = pd.read_csv(path)
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce", utc=True)
+
     df["weekday"] = df["timestamp"].dt.day_name()
     df["month_day"] = df["timestamp"].dt.day
     df["year_day"] = df["timestamp"].dt.dayofyear
