@@ -6,6 +6,7 @@ from commodities_indices.indices import recive_indicies
 from plex.plex_price import request_plex_info
 from plex.plex_analysis import generate_market_plots
 from volume.volume_data import request_volume_data
+from volume.volume_analysis import generate_volume_plots
 
 if __name__ == "__main__":
     # input_path = "doctrine.csv"
@@ -42,3 +43,4 @@ if __name__ == "__main__":
     generate_market_plots("plex/data/price.csv", output_dir="plex/plots", item_name="plex")
 
     request_volume_data()
+    generate_volume_plots()
