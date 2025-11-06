@@ -1,0 +1,16 @@
+file,desc
+plots\plex_volumes_and_orders.png,volumes_and_orders
+plots\plex_price_sma_ema.png,price_sma_ema
+plots\plex_macd_signal_hist.png,macd_signal_hist
+plots\plex_rsi.png,rsi
+plots\plex_bollinger_bands.png,bollinger_bands
+plots\plex_momentum_roc.png,momentum_roc
+plots\plex_zscore_price_24.png,zscore_price_24
+plots\plex_rolling_std_vol_24.png,rolling_std_vol_24
+plots\plex_stochastic_kd_approx.png,stochastic_kd_approx
+plots\plex_williams_r_approx.png,williams_r_approx
+plots\plex_volume_indicators.png,volume_indicators
+plots\plex_outliers_thresholds.png,outliers_thresholds
+plots\plex_vma_series.png,vma_series
+plots\plex_correlation_matrix.png,correlation_matrix
+plots\plex_risk_dashboard.png,risk_dashboard

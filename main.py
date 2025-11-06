@@ -4,6 +4,7 @@ from analysis.local_prices_analysis import analyze_market_timeline
 from trade.hub_trading import trading_analysis
 from commodities_indices.indices import recive_indicies
 from plex.plex_price import request_plex_info
+from plex.plex_analysis import generate_market_plots
 from volume.volume_data import request_volume_data
 
 if __name__ == "__main__":
@@ -38,5 +39,6 @@ if __name__ == "__main__":
     recive_indicies()
 
     request_plex_info()
+    generate_market_plots("plex/data/price.csv", output_dir="plex/plots", item_name="plex")
 
     request_volume_data()
