@@ -193,10 +193,12 @@ def generate_volume_plots(data_dir: str = "volume/data", plot_dir: str = "volume
 
     df["Cluster"] = df["Cluster"].fillna(-1).astype(int)
 
+    df = df[df["Cluster"] >= 0]
+
     cluster_pivot = df.pivot_table(
         values="Cluster",
-        index="weekday_num",
-        columns="hour",
+        index="Item",
+        columns="Date",
         aggfunc=lambda x: np.bincount(x.astype(int)).argmax() if len(x) > 0 else -1
     )
 
