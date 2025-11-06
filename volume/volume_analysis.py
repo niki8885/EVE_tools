@@ -191,7 +191,15 @@ def generate_volume_plots(data_dir: str = "volume/data", plot_dir: str = "volume
         plt.savefig(plot_dir / f"heatmap_{col}.png")
         plt.close()
 
-    cluster_pivot = df.pivot_table(values="Cluster", index="weekday_num", columns="hour", aggfunc=lambda x: np.bincount(x.astype(int)).argmax())
+    df["Cluster"] = df["Cluster"].fillna(-1).astype(int)
+
+    cluster_pivot = df.pivot_table(
+        values="Cluster",
+        index="weekday_num",
+        columns="hour",
+        aggfunc=lambda x: np.bincount(x.astype(int)).argmax() if len(x) > 0 else -1
+    )
+
     plt.figure(figsize=(10, 5))
     sns.heatmap(cluster_pivot, cmap="tab10", cbar_kws={'label': 'Dominant Cluster'})
     plt.title("Dominant Market Cluster by Day and Hour")
