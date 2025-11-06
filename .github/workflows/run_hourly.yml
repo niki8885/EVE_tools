@@ -44,6 +44,7 @@ jobs:
             commodities_indices/prices
             commodities_indices/plots
             plex/data 
+            plex/plots
             volume/data
 
       - name: Commit and push updated prices
@@ -58,6 +59,7 @@ jobs:
           git add trade/fuel trade/minerals trade/doctrine
           git add commodities_indices/prices commodities_indices/plots
           git add plex/data 
+          git add plex/plots
           git add volume/data
 
           if [ -n "$(git status --porcelain)" ]; then
