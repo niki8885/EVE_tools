@@ -22,59 +22,70 @@ def get_type_id_by_name(item_name: str) -> int:
         return data['typeID']
     raise ValueError(f"Item '{item_name}' not found")
 
-def allocate_item_with_prices(regions_names: List[str], item_name: str, total_amount: int) -> Dict[str, Dict[str, float]]:
+def allocate_item_profit_based(regions_names: List[str], item_name: str, total_amount: int, buy_price: float) -> Dict[str, Dict[str, float]]:
     type_id = get_type_id_by_name(item_name)
     region_ids = [get_region_id_by_name(r) for r in regions_names]
 
-    region_volumes = {}
+    region_scores = {}
     min_sell_prices = {}
 
     for name, rid in zip(regions_names, region_ids):
+        stats_url = f"{BASE_URL}/market/stats/{rid}/{type_id}"
+        try:
+            resp = requests.get(stats_url, timeout=10)
+            resp.raise_for_status()
+            stats = resp.json()
+            sell_price = stats.get('sellAvgFivePercent', 0)
+            min_sell_prices[name] = sell_price
+        except Exception as e:
+            print(f"Error fetching stats for region {name}: {e}")
+            min_sell_prices[name] = 0
+            sell_price = 0
+
         hist_url = f"{BASE_URL}/market/history/{rid}/{type_id}"
         try:
             resp = requests.get(hist_url, timeout=10)
             resp.raise_for_status()
             history = resp.json()
             total_volume = sum(day['volume'] for day in history)
-            region_volumes[name] = total_volume
         except Exception as e:
             print(f"Error fetching history for region {name}: {e}")
-            region_volumes[name] = 0
+            total_volume = 0
 
-        stats_url = f"{BASE_URL}/market/stats/{rid}/{type_id}"
-        try:
-            resp = requests.get(stats_url, timeout=10)
-            resp.raise_for_status()
-            stats = resp.json()
-            min_sell_prices[name] = stats.get('sellAvgFivePercent', 0)
-        except Exception as e:
-            print(f"Error fetching stats for region {name}: {e}")
-            min_sell_prices[name] = 0
+        expected_profit = sell_price - buy_price
+        score = expected_profit * total_volume
+        if score > 0:
+            region_scores[name] = score
 
-    if all(v == 0 for v in region_volumes.values()):
-        equal_amount = total_amount // len(regions_names)
-        allocation = {name: {"amount": equal_amount, "min_sell_price": min_sell_prices[name]} for name in regions_names}
-        return allocation
+    if not region_scores:
+        print("No profitable regions found. Nothing to allocate.")
+        return {}
 
-    total_volume_sum = sum(region_volumes.values())
+    total_score = sum(region_scores.values())
     allocation = {}
     remaining = total_amount
 
-    for i, name in enumerate(regions_names):
-        if i == len(regions_names) - 1:
+    for i, (name, score) in enumerate(region_scores.items()):
+        if i == len(region_scores) - 1:
             amt = remaining
         else:
-            amt = round(total_amount * (region_volumes[name] / total_volume_sum))
+            amt = round(total_amount * (score / total_score))
             remaining -= amt
-        allocation[name] = {"amount": amt, "min_sell_price": min_sell_prices[name]}
+        expected_profit = (min_sell_prices[name] - buy_price) * amt
+        allocation[name] = {
+            "amount": amt,
+            "min_sell_price": min_sell_prices[name],
+            "expected_profit": expected_profit
+        }
 
     return allocation
 
-
-regions = ["The Forge", "Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison","G-R00031"]
+regions_production = ["The Forge", "Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison"]
+regions = ["Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison","G-R00031"]
 item = "Damage Control II"
 total_amount = 200
+buy_price = 393700.0
 
-allocation = allocate_item_with_prices(regions, item, total_amount)
+allocation = allocate_item_profit_based(regions, item, total_amount, buy_price)
 for region, data in allocation.items():
-    print(f"{region}: {data['amount']} units, min sell price: {data['min_sell_price']}")
+    print(f"{region}: {data['amount']} units, min sell price: {data['min_sell_price']}, expected profit: {data['expected_profit']}")
