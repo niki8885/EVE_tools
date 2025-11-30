@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 from typing import List, Dict
 
 BASE_URL = "https://evetycoon.com/api/v1"
@@ -80,12 +81,74 @@ def allocate_item_profit_based(regions_names: List[str], item_name: str, total_a
 
     return allocation
 
-regions_production = ["The Forge", "Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison"]
-regions = ["Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison","G-R00031"]
-item = "Damage Control II"
-total_amount = 200
-buy_price = 393700.0
 
-allocation = allocate_item_profit_based(regions, item, total_amount, buy_price)
-for region, data in allocation.items():
-    print(f"{region}: {data['amount']} units, min sell price: {data['min_sell_price']}, expected profit: {data['expected_profit']}")
+def process_items(
+    regions: List[str],
+    items: Dict[str, Dict[str, float]]
+) -> pd.DataFrame:
+    """
+    items = {
+        "Item Name": {"amount": int, "buy_price": float}
+    }
+    """
+    all_rows = []
+
+    for item_name, params in items.items():
+        amount = params["amount"]
+        buy_price = params["buy_price"]
+        print(f"\nProcessing {item_name} ({amount} units)...")
+        allocation = allocate_item_profit_based(regions, item_name, amount, buy_price)
+        for region, data in allocation.items():
+            all_rows.append({
+                "item": item_name,
+                "region": region,
+                "amount": data["amount"],
+                "min_sell_price": data["min_sell_price"],
+                "expected_profit": data["expected_profit"]
+            })
+
+    df = pd.DataFrame(all_rows)
+    if not df.empty:
+        df = df.sort_values(by=["item", "expected_profit"], ascending=[True, False])
+    return df
+
+
+def items_to_hubs(
+    regions: List[str],
+    items: Dict[str, Dict[str, float]]
+) -> pd.DataFrame:
+    df_allocations = process_items(regions, items)
+    print("\n--- Allocation Table ---")
+    print(df_allocations.to_string(index=False))
+
+
+
+
+
+
+regions = ["Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison","G-R00031","Placid"]
+regions_production = ["The Forge","Molden Heath", "Heimatar", "Metropolis", "Genesis", "Sinq Laison","G-R00031","Placid"]
+
+items = {
+    "Strip Miner I": {"amount": 40, "buy_price": 4235000},
+    "650mm Artillery Cannon II": {"amount": 75, "buy_price": 1300000},
+    "Neural Lace 'Blackglass' Net Intrusion 920-40": {"amount": 3, "buy_price": 98990000},
+    "Sisters Core Scanner Probe": {"amount": 224, "buy_price": 754150},
+    "Small Ancillary Armor Repairer": {"amount": 20, "buy_price": 25600}
+
+}
+
+items_2 = {
+    "Curator II": {"amount": 100, "buy_price": 1520000},
+    "Light Armor Maintenance Bot II": {"amount": 360, "buy_price": 305000},
+    "Prototype Cloaking Device I": {"amount": 300, "buy_price": 1781000},
+    "Capacitor Power Relay II": {"amount": 500, "buy_price": 340000},
+    "Gravimetric ECM II": {"amount": 300, "buy_price": 997000},
+    "Gyrostabilizer II": {"amount": 280, "buy_price": 758000},
+    "Nanofiber Internal Structure II": {"amount": 100, "buy_price": 87000},
+    "Tracking Computer II": {"amount": 520, "buy_price": 965000},
+    "Tracking Enhancer II": {"amount": 230, "buy_price": 680000}
+}
+
+items_to_hubs(regions, items)
+items_to_hubs(regions, items_2)
